@@ -53,11 +53,11 @@ Mount volumes, start daemon
 export chain=dogecoin
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
-
+docker run -v /data:/data -it cryptoetl/$chain-docker nice -19 ./bin/dogecoind -listenonion=0 -datadir=/data/dogecoind -onlynet=ipv4
 ```
 Run blocksci
 ```
-XXX
+docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/dogecoind
 ```
 
 ## litecoin
