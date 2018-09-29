@@ -79,6 +79,6 @@ Mount volumes, start daemon
 ```
 export chain=ethereum
 mount /dev/disk/by-id/google-blockchain-$chain /data
-docker run -ti parity/parity --jsonrpc-interface=all --jsonrpc-port=8545 --jsonrpc-apis=all
+docker run -v /data:/data -ti parity/parity --jsonrpc-interface=all --jsonrpc-port=8545 --jsonrpc-apis=all
  --tracing=on --pruning=archive --db-compaction=ssd -d /data -l info
  ```
