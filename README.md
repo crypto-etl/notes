@@ -19,7 +19,7 @@ mkdir /data
 mkdir /blocksci
 ```
 
-## bitcoin-cash
+## bitcoin-core
 Mount volumes, start daemon
 ```
 export chain=bitcoin-core
