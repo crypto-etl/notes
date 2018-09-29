@@ -71,7 +71,7 @@ docker run -e LITECOIN_DATA=/data/litecoind -v /data:/data -it uphold/litecoin-c
 ```
 Run blocksci
 ```
-XXX
+docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/litecoind
 ```
 
 ## ethereum
