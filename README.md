@@ -31,6 +31,7 @@ docker run -v /data:/data -it cryptoetl/$chain-docker nice -19 ./src/bitcoind -l
 Run blocksci
 ```
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/bitcoind
+docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_clusterer /blocksci/parser /blocksci/clusterer --overwrite
 ```
 
 ## bitcoin-core
@@ -45,6 +46,7 @@ docker run -v /data:/data -it cryptoetl/$chain-docker nice -19 ./src/bitcoind -l
 Run blocksci
 ```
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/bitcoind
+docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_clusterer /blocksci/parser /blocksci/clusterer --overwrite
 ```
 
 ## dogecoin
@@ -58,6 +60,7 @@ docker run -v /data:/data -it cryptoetl/$chain-docker nice -19 ./bin/dogecoind -
 Run blocksci
 ```
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/dogecoind
+docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_clusterer /blocksci/parser /blocksci/clusterer --overwrite
 ```
 
 ## litecoin
@@ -72,6 +75,7 @@ docker run -e LITECOIN_DATA=/data/litecoind -v /data:/data -it uphold/litecoin-c
 Run blocksci
 ```
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/litecoind
+docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_clusterer /blocksci/parser /blocksci/clusterer --overwrite
 ```
 
 ## ethereum
