@@ -47,7 +47,20 @@ Run blocksci
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/bitcoind
 ```
 
-## litecoin-core
+## dogecoin
+Mount volumes, start daemon
+```
+export chain=dogecoin
+mount /dev/disk/by-id/google-blockchain-$chain /data
+mount /dev/disk/by-id/google-blocksci-$chain /blocksci
+
+```
+Run blocksci
+```
+XXX
+```
+
+## litecoin
 Mount volumes, start daemon
 ```
 export chain=litecoin
@@ -55,6 +68,10 @@ mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
 mkdir -p /data/litecoind
 docker run -e LITECOIN_DATA=/data/litecoind -v /data:/data -it uphold/litecoin-core -listenonion=0 -onlynet=ipv4 
+```
+Run blocksci
+```
+XXX
 ```
 
 ## ethereum
