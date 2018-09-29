@@ -19,6 +19,20 @@ mkdir /data
 mkdir /blocksci
 ```
 
+## bitcoin-cash
+Mount volumes, start daemon
+```
+export chain=bitcoin-cash
+mount /dev/disk/by-id/google-blockchain-$chain /data
+mount /dev/disk/by-id/google-blocksci-$chain /blocksci
+mkdir -p /data/bitcoind
+docker run -v /data:/data -it cryptoetl/$chain-docker nice -19 ./src/bitcoind -listenonion=0 -datadir=/data/bitcoind -onlynet=ipv4
+```
+Run blocksci
+```
+docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/bitcoind
+```
+
 ## bitcoin-core
 Mount volumes, start daemon
 ```
