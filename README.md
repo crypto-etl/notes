@@ -62,6 +62,8 @@ Run blocksci
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/dogecoind
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_clusterer /blocksci/parser /blocksci/clusterer --overwrite
 ```
+Issues
+* `blocksci_parser` silently fails to recognize contents of `dogecoind` 
 
 ## litecoin
 Mount volumes, start daemon
@@ -77,6 +79,29 @@ Run blocksci
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/litecoind
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_clusterer /blocksci/parser /blocksci/clusterer --overwrite
 ```
+Issues
+* None :)
+
+## zcash
+Mount volumes, start daemon
+```
+export chain=zcash
+mount /dev/disk/by-id/google-blockchain-$chain /data
+mount /dev/disk/by-id/google-blocksci-$chain /blocksci
+mkdir -p /data/zcashd
+```
+Run blocksci
+```
+TODO
+```
+
+## steem
+Mount volumes, start daemon
+```
+export chain=steem
+mount /dev/disk/by-id/google-blockchain-$chain /data
+docker run -v /data/steemd:/var/lib/steemd --env USE_WAY_TOO_MUCH_RAM=1 --env USE_FULL_WEB_NODE=1 -p 2001:2001 -p 8090:8090 --restart unless-stopped steemit/steem
+```
 
 ## ethereum
 Mount volumes, start daemon
@@ -86,3 +111,5 @@ mount /dev/disk/by-id/google-blockchain-$chain /data
 docker run -v /data:/data -ti parity/parity --jsonrpc-interface=all --jsonrpc-port=8545 --jsonrpc-apis=all
  --tracing=on --pruning=archive --db-compaction=ssd -d /data -l info
  ```
+ Issues
+ `TBD`
