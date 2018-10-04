@@ -33,6 +33,8 @@ Run blocksci
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/bitcoind
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_clusterer /blocksci/parser /blocksci/clusterer --overwrite
 ```
+Issues
+* Failing to do incremental updates. Always restarts.
 
 ## bitcoin-core
 Mount volumes, start daemon
@@ -48,6 +50,8 @@ Run blocksci
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_parser --output-directory /blocksci/parser update disk --coin-directory /data/bitcoind
 docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker blocksci_clusterer /blocksci/parser /blocksci/clusterer --overwrite
 ```
+Issues
+* None :)
 
 ## dogecoin
 Mount volumes, start daemon
