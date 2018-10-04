@@ -89,6 +89,7 @@ export chain=zcash
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
 mkdir -p /data/zcashd
+docker run -v /data:/data cryptoetl/zcash-docker:latest /usr/bin/zcashd -datadir=/data/zcashd
 ```
 Run blocksci
 ```
