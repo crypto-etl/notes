@@ -58,7 +58,7 @@ Issues
 export chain=dash
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
-docker run -v /data/dashd:/dash -p 9999:9999 -p 127.0.0.1:9998:9998 dashpay/dashd
+docker run -v /data/dashd:/dash/.dashcore -p 9999:9999 -p 127.0.0.1:9998:9998 dashpay/dashd
 ```
 Run blocksci
 ```
