@@ -53,6 +53,19 @@ docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker bl
 Issues
 * None :)
 
+## dash
+```
+export chain=dash
+mount /dev/disk/by-id/google-blockchain-$chain /data
+mount /dev/disk/by-id/google-blocksci-$chain /blocksci
+docker run -v /data/dashd:/dash -p 9999:9999 -p 127.0.0.1:9998:9998 dashpay/dashd
+```
+Run blocksci
+```
+TODO
+```
+Issues
+
 ## dogecoin
 Mount volumes, start daemon
 ```
