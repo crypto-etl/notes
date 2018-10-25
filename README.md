@@ -126,7 +126,7 @@ Mount volumes, start daemon
 ```
 export chain=ethereum
 mount /dev/disk/by-id/google-blockchain-$chain /data
-docker run -v /data:/data -p 8545:8545 -ti parity/parity:v2.0.8 --jsonrpc-interface=all --jsonrpc-port=8545 --jsonrpc-apis=all --tracing=on --pruning=archive --db-compaction=ssd -d /data -l info
+docker run -v /data:/data -p 3389:8545 -ti parity/parity:v2.0.8 --jsonrpc-interface=all --jsonrpc-port=8545 --jsonrpc-apis=all --tracing=on --pruning=archive --db-compaction=ssd -d /data -l info
  ```
  Issues
  `TBD`
