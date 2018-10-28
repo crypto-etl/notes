@@ -72,7 +72,8 @@ Mount volumes, start daemon
 export chain=dogecoin
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
-docker run -p 3389:8332 -v /data:/data -it cryptoetl/dogecoin-docker nice -19 ./bin/dogecoind -listenonion=0 -datadir=/data/dogecoind -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcallowip=10.0.0.0/8 -rpcuser=x -rpcpassword=x
+#dogecoind rpc user/pass specified in config file
+docker run -p 3389:8332 -v /data:/data -it cryptoetl/dogecoin-docker nice -19 ./bin/dogecoind -listenonion=0 -datadir=/data/dogecoind -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcallowip=10.0.0.0/8
 ```
 Run blocksci
 ```
@@ -106,7 +107,7 @@ export chain=zcash
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
 mkdir -p /data/zcashd
-docker run -v /data:/data cryptoetl/zcash-docker:latest /usr/bin/zcashd -datadir=/data/zcashd
+docker run -p 3389:8232 -v /data:/data cryptoetl/zcash-docker:latest /usr/bin/zcashd -datadir=/data/zcashd -listenonion=0 -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcport=8232 -rpcallowip=10.0.0.0/8 -rpcuser=x -rpcpassword=x
 ```
 Run blocksci
 ```
