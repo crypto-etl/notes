@@ -43,7 +43,7 @@ export chain=bitcoin-core
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
 mkdir -p /data/bitcoind
-docker run -v /data:/data -it cryptoetl/$chain-docker nice -19 ./src/bitcoind -listenonion=0 -datadir=/data/bitcoind -listenonion=0 -datadir=/data/bitcoind -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcallowip=0.0.0.0/0
+docker run -v /data:/data -it cryptoetl/$chain-docker nice -19 ./src/bitcoind -listenonion=0 -datadir=/data/bitcoind -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcallowip=0.0.0.0/0
 ```
 Run blocksci
 ```
@@ -72,7 +72,7 @@ Mount volumes, start daemon
 export chain=dogecoin
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
-docker run -v /data:/data -it cryptoetl/$chain-docker nice -19 ./bin/dogecoind -listenonion=0 -datadir=/data/dogecoind -onlynet=ipv4
+docker run -v /data:/data -it cryptoetl/dogecoin-docker nice -19 ./bin/dogecoind -listenonion=0 -datadir=/data/dogecoind -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcallowip=0.0.0.0/0
 ```
 Run blocksci
 ```
