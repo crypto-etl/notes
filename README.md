@@ -26,7 +26,7 @@ export chain=bitcoin-cash
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
 mkdir -p /data/bitcoind
-docker run -v /data:/data -it cryptoetl/$chain-docker nice -19 ./src/bitcoind -listenonion=0 -datadir=/data/bitcoind -onlynet=ipv4
+docker run -p 3389:8332 -v /data:/data -it cryptoetl/$chain-docker nice -19 ./src/bitcoind -listenonion=0 -datadir=/data/bitcoind -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcallowip=10.0.0.0/8 -rpcuser=x -rpcpassword=x
 ```
 Run blocksci
 ```
@@ -58,7 +58,8 @@ Issues
 export chain=dash
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
-docker run -v /data/dashd:/dash/.dashcore -p 9999:9999 -p 127.0.0.1:9998:9998 dashpay/dashd
+#dogecoind rpc user/pass specified in config file
+docker run -v /data/dashd:/dash/.dashcore -p 3389:8332 dashpay/dashd
 ```
 Run blocksci
 ```
