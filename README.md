@@ -72,7 +72,7 @@ Mount volumes, start daemon
 export chain=dogecoin
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
-docker run -v /data:/data -it cryptoetl/dogecoin-docker nice -19 ./bin/dogecoind -listenonion=0 -datadir=/data/dogecoind -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcallowip=0.0.0.0/0
+docker run -p 3389:8332 -v /data:/data -it cryptoetl/dogecoin-docker nice -19 ./bin/dogecoind -listenonion=0 -datadir=/data/dogecoind -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcallowip=0.0.0.0/0
 ```
 Run blocksci
 ```
@@ -89,7 +89,7 @@ export chain=litecoin
 mount /dev/disk/by-id/google-blockchain-$chain /data
 mount /dev/disk/by-id/google-blocksci-$chain /blocksci
 mkdir -p /data/litecoind
-docker run -e LITECOIN_DATA=/data/litecoind -v /data:/data -it uphold/litecoin-core -listenonion=0 -onlynet=ipv4 
+docker run -p 3389:9332 -e LITECOIN_DATA=/data/litecoind -v /data:/data -it uphold/litecoin-core -listenonion=0 -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcallowip=0.0.0.0/0 
 ```
 Run blocksci
 ```
