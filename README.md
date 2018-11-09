@@ -101,6 +101,16 @@ docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker bl
 Issues
 * None :)
 
+## namecoin
+Mount volumes, start daemon
+```
+docker run -v /data/namecoin:/data/namecoin acejam/namecoin:latest namecoind -datadir=/data/namecoin -txindex=1
+```
+Run blocksci
+```
+TODO
+```
+
 ## zcash
 Mount volumes, start daemon
 ```
