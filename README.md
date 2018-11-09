@@ -105,6 +105,8 @@ Issues
 Mount volumes, start daemon
 ```
 docker run -v /data/namecoin:/data/namecoin acejam/namecoin:latest namecoind -datadir=/data/namecoin -txindex=1
+-OR-
+docker run -v /data:/data allenday/namecoin-core-docker namecoind -listenonion=0 -datadir=/data/namecoind -onlynet=ipv4 -txindex=1
 ```
 Run blocksci
 ```
