@@ -53,6 +53,13 @@ docker run -v /data:/data -v /blocksci:/blocksci -it allenday/blocksci-docker bl
 Issues
 * None :)
 
+## bitcoin-diamond
+```
+docker run -e BITCOINDIAMOND_DATA=/data/bitcoindiamondd -v /data:/data -it messari/bitcoin-diamond bitcoindiamondd -listenonion=0 -datadir=/data/bitcoindiamondd -onlynet=ipv4 -txindex=1
+```
+
+## bitcoin-gold
+
 ## dash
 ```
 export chain=dash
