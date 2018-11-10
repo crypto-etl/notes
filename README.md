@@ -116,7 +116,7 @@ Mount volumes, start daemon
 ```
 docker run -v /data/namecoin:/data/namecoin acejam/namecoin:latest namecoind -datadir=/data/namecoin -txindex=1
 -OR-
-docker run -v /data:/data allenday/namecoin-core-docker namecoind -listenonion=0 -datadir=/data/namecoind -onlynet=ipv4 -txindex=1
+docker run -p 3389:8232 -v /data:/data allenday/namecoin-core-docker namecoind -listenonion=0 -onlynet=ipv4 -server -rpcbind=0.0.0.0 -rpcport=8232 -rpcallowip=10.0.0.0/8 -rpcuser=x -rpcpassword=x -datadir=/data/namecoind -onlynet=ipv4 -txindex=1
 ```
 Run blocksci
 ```
