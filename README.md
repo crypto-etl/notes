@@ -59,6 +59,9 @@ docker run -e BITCOINDIAMOND_DATA=/data/bitcoindiamondd -v /data:/data -it messa
 ```
 
 ## bitcoin-gold
+```
+docker run -e BITCOIN_GOLD_DATA=/data/bgoldd -v /data:/data -it cryptoetl/bitcoin-gold bgoldd -listenonion=0 -datadir=/data/bgoldd -onlynet=ipv4 -txindex=1
+```
 
 ## dash
 ```
