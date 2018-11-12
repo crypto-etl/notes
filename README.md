@@ -162,7 +162,7 @@ docker run --rm -d --name flask-bitcoin-cash -p 9002:5000 -v /data:/data -e BLOC
 #docker run --rm -d --name flask-bitcoin-diamond -p 9003:5000 -v /data:/data -e BLOCKSCI_PARSER_FILES_LOC=/data/dev/blocksci-cfg/bitcoin-diamond.cfg -it allenday/docker-blocksci-flask:v0.6
 #docker run --rm -d --name flask-bitcoin-gold -p 9004:5000 -v /data:/data -e BLOCKSCI_PARSER_FILES_LOC=/data/dev/blocksci-cfg/bitcoin-gold.cfg -it allenday/docker-blocksci-flask:v0.6
 docker run --rm -d --name flask-dash -p 9005:5000 -v /data:/data -e BLOCKSCI_PARSER_FILES_LOC=/data/dev/blocksci-cfg/dash.cfg -it allenday/docker-blocksci-flask:v0.6
-#docker run --rm -d --name flask-dogecoin -p 9006:5000 -v /data:/data -e BLOCKSCI_PARSER_FILES_LOC=/data/dev/blocksci-cfg/dogecoin.cfg -it allenday/docker-blocksci-flask:v0.6
+docker run --rm -d --name flask-dogecoin -p 9006:5000 -v /data:/data -e BLOCKSCI_PARSER_FILES_LOC=/data/dev/blocksci-cfg/dogecoin.cfg -it allenday/docker-blocksci-flask:v0.6
 docker run --rm -d --name flask-litecoin -p 9007:5000 -v /data:/data -e BLOCKSCI_PARSER_FILES_LOC=/data/dev/blocksci-cfg/litecoin.cfg -it allenday/docker-blocksci-flask:v0.6
 docker run --rm -d --name flask-namecoin -p 9008:5000 -v /data:/data -e BLOCKSCI_PARSER_FILES_LOC=/data/dev/blocksci-cfg/namecoin.cfg -it allenday/docker-blocksci-flask:v0.6
 docker run --rm -d --name flask-zcash -p 9009:5000 -v /data:/data -e BLOCKSCI_PARSER_FILES_LOC=/data/dev/blocksci-cfg/zcash.cfg -it allenday/docker-blocksci-flask:v0.6
